@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Grosv\LaravelPasswordlessLogin\Traits\PasswordlessLogin;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -9,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
+    use PasswordlessLogin;
 
     /**
      * The attributes that are mass assignable.
