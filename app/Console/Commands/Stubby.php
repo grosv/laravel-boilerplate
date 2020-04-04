@@ -24,8 +24,8 @@ class Stubby extends Command
 
     public function handle(): int
     {
-        $this->thing = $this->argument['thing'];
-        $this->name = Str::studly($this->argument['name']);
+        $this->thing = $this->argument('thing');
+        $this->name = Str::studly($this->argument('name'));
 
         if (empty($this->thing)) {
             $this->error('What are you trying to build?');
