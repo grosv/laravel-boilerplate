@@ -38,6 +38,7 @@ class Stubby extends Command
             case 'action':
                     $stub = File::get(base_path('stubs/action.stub'));
                     File::put(app_path('Actions/'.$this->name).'.php', Str::replaceFirst('{{ class }}', $this->name, $stub));
+                    $this->info('Action created successfully.');
                     $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
                 break;
             case 'command':
