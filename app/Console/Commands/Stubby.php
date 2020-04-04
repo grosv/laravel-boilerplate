@@ -45,8 +45,8 @@ class Stubby extends Command
                 $this->info('Template created successfully.');
                 break;
             case 'command':
-                $this->call('make:controller', ['name' => $this->name]);
-                $this->call('make:test --unit', ['name' => $this->name . 'Test']);
+                $this->call('make:command', ['name' => $this->name]);
+                $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
                 break;
         }
         return 0;
