@@ -1,12 +1,13 @@
 <?php
 
 return [
-    'color' => 'blue',
+    'color' => 'red',
     'social' => [
-        'facebook' => '',
-        'github' => 'grosv',
-        'instagram' => '',
+        'facebook' => 'edgrosvenor',
+        'github' => 'edgrosvenor',
+        'instagram' => 'edgrosvenor',
         'twitter' => 'MaybeEdward',
     ],
-    'footer' => 'simple_social'
+    'footer' => 'simple_social',
+    'layout' => 'droopy',
 ];
