@@ -54,6 +54,9 @@ class Stubby extends Command
                 File::put(resource_path('views/'.Str::snake(Str::replaceLast('Controller', '', $this->name))), "@extends('layouts.app')\n@section('content')\n\n@endsection");
                 $this->info('Template created successfully.');
                 break;
+            case 'model':
+                $this->call('make:model', ['name' => $this->name, '-m' => true]);
+                $this->call('make:factory', ['name' => $this->name.'Factory', '--model' => 'App\\'.$this->name]);
 
 
         }
