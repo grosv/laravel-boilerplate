@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Actions;
+
+class {{ class }}
+{
+    public function __invoke()
+    {
+
+    }
+
+    public function execute()
+    {
+
+    }
+}

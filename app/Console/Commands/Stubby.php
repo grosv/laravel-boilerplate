@@ -35,6 +35,15 @@ class Stubby extends Command
             $this->error('What are you trying to name the thing you are trying to build?');
         }
         switch($this->thing) {
+            case 'action':
+                    $stub = File::get(base_path('stubs/action.stub'));
+                    File::put(app_path('Actions/'.$this->name).'.php', Str::replaceFirst('{{ class }}', $this->name, $stub));
+                    $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
+                break;
+            case 'command':
+                $this->call('make:command', ['name' => $this->name]);
+                $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
+                break;
             case 'controller':
                 if (Str::endsWith($this->name, 'Controller')) {
                     $this->name .= 'Controller';
@@ -44,11 +53,8 @@ class Stubby extends Command
                 File::put(resource_path('views/'.Str::snake(Str::replaceLast('Controller', '', $this->name))), "@extends('layouts.app')\n@section('content')\n\n@endsection");
                 $this->info('Template created successfully.');
                 break;
-            case 'command':
-                $this->call('make:test', ['name' => $this->name . 'Test', '--unit']);
-                $this->call('make:command', ['name' => $this->name]);
 
-                break;
+
         }
         return 0;
     }
