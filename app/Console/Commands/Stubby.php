@@ -46,7 +46,7 @@ class Stubby extends Command
                 break;
             case 'command':
                 $this->call('make:command', ['name' => $this->name]);
-                $this->call('make:test', ['name' => $this->name . 'Test', '--unit']);
+                $this->call('make:test', ['name' => $this->name . 'Test']);
                 break;
         }
         return 0;
