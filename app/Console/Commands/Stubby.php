@@ -3,22 +3,21 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use TitasGailius\Terminal\Terminal;
 
 class Stubby extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'new {thing} {name}';
 
+    private Collection $files;
 
     public function __construct()
     {
         parent::__construct();
+        $this->files = collect([]);
     }
 
 
@@ -39,8 +38,10 @@ class Stubby extends Command
             case 'action':
                     $stub = File::get(base_path('stubs/action.stub'));
                     File::put(app_path('Actions/'.$this->name).'.php', str_replace('{{ class }}', $this->name, $stub));
+                    $this->files->push('app/Actions/'.$this->name.'.php');
                     $this->info('Action created successfully.');
-                    $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
+                    $this->call('make:test', ['name' => 'Action' . $this->name . 'Test', '--unit' => true]);
+                    $this->files->push('tests/Unit/Action'.$this->name.'Test.php');
                 break;
             case 'command':
                 $this->call('make:command', ['name' => $this->name]);
@@ -67,10 +68,15 @@ class Stubby extends Command
             case 'model':
                 $this->call('make:model', ['name' => $this->name, '-m' => true]);
                 $this->call('make:factory', ['name' => $this->name.'Factory', '--model' => 'App\\'.$this->name]);
+
                 break;
 
 
         }
+
+        $this->files->each(function($file) {
+            Terminal::run("pstorm $file");
+        });
         return 0;
     }
 }
