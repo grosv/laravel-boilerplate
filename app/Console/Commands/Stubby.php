@@ -69,7 +69,9 @@ class Stubby extends Command
                 break;
             case 'livewire':
                 $this->call('make:livewire', ['name' => Str::slug($this->name)]);
+                $this->files->push(app_path('Http/Livewire/'.$this->name.'.php'));
                 $this->call('make:test', ['name' => 'Livewire'.$this->name.'Test', '--unit' => true]);
+                $this->files->push(base_path('tests/Unit/Livewire'.$this->name.'Test.php'));
                 break;
             case 'model':
                 $this->call('make:model', ['name' => $this->name, '-m' => true]);
