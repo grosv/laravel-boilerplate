@@ -77,7 +77,7 @@ class Stubby extends Command
                 $this->call('make:model', ['name' => $this->name, '-m' => true]);
                 $this->files->push(app_path($this->name.'.php'));
                 foreach (scandir(database_path('migrations/')) as $file) {
-                    if (Str::contains($file, 'create_'.Str::snake($this->name))) {
+                    if (Str::contains($file, 'create_'.Str::snake(Str::plural($this->name)))) {
                         $this->files->push(database_path('migrations/'.$file));
                     }
                 }
