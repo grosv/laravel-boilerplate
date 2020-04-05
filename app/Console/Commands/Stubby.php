@@ -56,7 +56,7 @@ class Stubby extends Command
                 $stub = File::get(base_path('stubs/test.mojito.stub'));
                 $stub = str_replace('{{ namespace }}', 'App\\Tests\\Unit', $stub);
                 $stub = str_replace('{{ class }}', $this->name.'Test', $stub);
-                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub));
+                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub);
                 $this->info('Mojito test created successfully.');
                 break;
             case 'livewire':
