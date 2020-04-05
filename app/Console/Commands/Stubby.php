@@ -75,7 +75,15 @@ class Stubby extends Command
                 break;
             case 'model':
                 $this->call('make:model', ['name' => $this->name, '-m' => true]);
+                $this->files->push(app_path($this->name.'.php'));
+                foreach (scandir(database_path('migrations/')) as $file) {
+                    if (Str::contains($file, 'create_'.Str::snake($this->name))) {
+                        $this->files->push(database_path('migrations/'.$file));
+                    }
+                }
                 $this->call('make:factory', ['name' => $this->name.'Factory', '--model' => 'App\\'.$this->name]);
+                $this->files->push(database_path('factories/'.$this->name.'Factory.php'));
+
 
                 break;
 
