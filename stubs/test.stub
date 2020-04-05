@@ -10,7 +10,7 @@ class {{ class }} extends TestCase
 {
 
     /** @test */
-    it_can_load_the_page()
+    public function it_can_load_the_page()
     {
         $this->markTestIncomplete();
     }
