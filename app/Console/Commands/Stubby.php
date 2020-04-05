@@ -47,7 +47,7 @@ class Stubby extends Command
                 $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
                 break;
             case 'controller':
-                if (Str::endsWith($this->name, 'Controller')) {
+                if (!Str::endsWith($this->name, 'Controller')) {
                     $this->name .= 'Controller';
                 }
                 $this->call('make:controller', ['name' => $this->name]);
