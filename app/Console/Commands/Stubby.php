@@ -53,6 +53,9 @@ class Stubby extends Command
                 $this->call('make:test', ['name' => $this->name . 'Test']);
                 File::put(resource_path('views/'.Str::snake(Str::replaceLast('Controller', '', $this->name))), "@extends('layouts.app')\n@section('content')\n\n@endsection");
                 $this->info('Template created successfully.');
+                $stub = File::get(base_path('stubs/test.mojito.stub'));
+                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), Str::replaceFirst('{{ class }}', $this->name.'Test', $stub));
+                $this->info('Mojito test created successfully.');
                 break;
             case 'livewire':
                 $this->call('make:livewire', ['name' => Str::slug($this->name)]);
