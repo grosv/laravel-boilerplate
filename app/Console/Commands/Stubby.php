@@ -37,7 +37,7 @@ class Stubby extends Command
         switch($this->thing) {
             case 'action':
                     $stub = File::get(base_path('stubs/action.stub'));
-                    File::put(app_path('Actions/'.$this->name).'.php', Str::replaceFirst('{{ class }}', $this->name, $stub));
+                    File::put(app_path('Actions/'.$this->name).'.php', str_replace('{{ class }}', $this->name, $stub));
                     $this->info('Action created successfully.');
                     $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
                 break;
@@ -54,7 +54,9 @@ class Stubby extends Command
                 File::put(resource_path('views/'.Str::snake(Str::replaceLast('Controller', '', $this->name))), "@extends('layouts.app')\n@section('content')\n\n@endsection");
                 $this->info('Template created successfully.');
                 $stub = File::get(base_path('stubs/test.mojito.stub'));
-                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), Str::replaceFirst('{{ class }}', $this->name.'Test', $stub));
+                $stub = str_replace('{{ namespace }}', 'App\\Tests\\Unit', $stub);
+                $stub = str_replace('{{ class }}', $this->name.'Test', $stub);
+                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub));
                 $this->info('Mojito test created successfully.');
                 break;
             case 'livewire':
