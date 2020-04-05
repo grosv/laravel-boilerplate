@@ -45,7 +45,7 @@ class Stubby extends Command
                 break;
             case 'command':
                 $this->call('make:command', ['name' => $this->name]);
-                $this->files->push(app_path('Console/Commands/'.$this->name.'.php');)
+                $this->files->push(app_path('Console/Commands/'.$this->name.'.php'));
                 $this->call('make:test', ['name' => 'Command' . $this->name . 'Test', '--unit' => true]);
                 $this->files->push('tests/Unit/Command'.$this->name.'Test.php');
                 break;
