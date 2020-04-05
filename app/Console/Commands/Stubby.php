@@ -33,6 +33,7 @@ class Stubby extends Command
         }
         if (empty($this->name)) {
             $this->error('What are you trying to name the thing you are trying to build?');
+            return 1;
         }
         switch($this->thing) {
             case 'action':
