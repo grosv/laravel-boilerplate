@@ -38,14 +38,16 @@ class Stubby extends Command
             case 'action':
                     $stub = File::get(base_path('stubs/action.stub'));
                     File::put(app_path('Actions/'.$this->name).'.php', str_replace('{{ class }}', $this->name, $stub));
-                    $this->files->push('app/Actions/'.$this->name.'.php');
+                    $this->files->push(app_path('/Actions/'.$this->name.'.php'));
                     $this->info('Action created successfully.');
                     $this->call('make:test', ['name' => 'Action' . $this->name . 'Test', '--unit' => true]);
                     $this->files->push('tests/Unit/Action'.$this->name.'Test.php');
                 break;
             case 'command':
                 $this->call('make:command', ['name' => $this->name]);
-                $this->call('make:test', ['name' => $this->name . 'Test', '--unit' => true]);
+                $this->files->push(app_path('Console/Commands/'.$this->name.'.php');)
+                $this->call('make:test', ['name' => 'Command' . $this->name . 'Test', '--unit' => true]);
+                $this->files->push('tests/Unit/Command'.$this->name.'Test.php');
                 break;
             case 'controller':
                 if (!Str::endsWith($this->name, 'Controller')) {
