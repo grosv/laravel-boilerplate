@@ -52,7 +52,7 @@ class Stubby extends Command
             case 'controller':
                 $stub = File::get(base_path('stubs/test.mojito.stub'));
                 $stub = str_replace('{{ namespace }}', 'Tests\\Unit', $stub);
-                $stub = str_replace('{{ class }}', $this->name.'Test', $stub);
+                $stub = str_replace('{{ class }}', 'Blade'.$this->name.'Test', $stub);
                 File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub);
                 $this->files->push(base_path('tests/Unit/Blade'.$this->name.'Test.php'));
                 $this->info('Mojito test created successfully.');
