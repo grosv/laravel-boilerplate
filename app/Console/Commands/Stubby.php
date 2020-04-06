@@ -50,8 +50,10 @@ class Stubby extends Command
                 $this->files->push('tests/Unit/Command'.$this->name.'Test.php');
                 break;
             case 'controller':
-
                 if (Str::endsWith($this->name, 'Controller')) {
+                    if (!class_exists('App\\'.str_replace('Controller', '', $this->name))) {
+                        $this->call('new', ['thing' => 'model', 'name' => str_replace('Controller', '', $this->name)]);
+                    }
                     $this->call('make:controller', ['name' => $this->name, '--resource' => true, '--model' => str_replace('Controller', '', $this->name)]);
                     $this->files->push(base_path('routes/api.php'));
                 }
@@ -60,6 +62,7 @@ class Stubby extends Command
                     $this->files->push(base_path('routes/web.php'));
                 }
                 $this->files->push(app_path('Http/Controllers/'.$this->name.'.php'));
+
                 $this->call('make:test', ['name' => $this->name . 'Test']);
                 $this->files->push('tests/Feature/'.$this->name.'Test.php');
                 File::put(resource_path('views/'.Str::snake(Str::replaceLast('Controller', '', $this->name)).'.blade.php'), "@extends('layouts.app')\n@section('content')\n\n@endsection");
