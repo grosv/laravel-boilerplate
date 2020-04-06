@@ -51,7 +51,7 @@ class Stubby extends Command
                 break;
             case 'controller':
                 if (Str::endsWith($this->name, 'Controller')) {
-                    if (!class_exists('App\\'.str_replace('Controller', '', $this->name))) {
+                    if (!File::exists(app_path(str_replace('Controller', '', $this->name).'php'))) {
                         $this->call('new', ['thing' => 'model', 'name' => str_replace('Controller', '', $this->name)]);
                     }
                     $this->call('make:controller', ['name' => $this->name, '--resource' => true, '--model' => str_replace('Controller', '', $this->name)]);
