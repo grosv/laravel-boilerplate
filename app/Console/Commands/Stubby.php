@@ -56,10 +56,14 @@ class Stubby extends Command
                 File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub);
                 $this->files->push(base_path('tests/Unit/Blade'.$this->name.'Test.php'));
                 $this->info('Mojito test created successfully.');
-                if (!Str::endsWith($this->name, 'Controller')) {
-                    $this->name .= 'Controller';
+                if (Str::endsWith($this->name, 'Controller')) {
+                    $this->call('make:controller', ['name' => $this->name, '--resource' => true, '--model' => str_replace('Controller', '', $this->name)]);
+                    $this->files->push(base_path('routes/api.php'));
                 }
-                $this->call('make:controller', ['name' => $this->name]);
+                else {
+                    $this->call('make:controller', ['name' => $this->name]);
+                    $this->files->push(base_path('routes/web.php'));
+                }
                 $this->files->push(app_path('Http/Controllers/'.$this->name.'.php'));
                 $this->call('make:test', ['name' => $this->name . 'Test']);
                 $this->files->push('tests/Feature/'.$this->name.'Test.php');
