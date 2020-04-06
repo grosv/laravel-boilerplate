@@ -50,12 +50,7 @@ class Stubby extends Command
                 $this->files->push('tests/Unit/Command'.$this->name.'Test.php');
                 break;
             case 'controller':
-                $stub = File::get(base_path('stubs/test.mojito.stub'));
-                $stub = str_replace('{{ namespace }}', 'Tests\\Unit', $stub);
-                $stub = str_replace('{{ class }}', 'Blade'.$this->name.'Test', $stub);
-                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub);
-                $this->files->push(base_path('tests/Unit/Blade'.$this->name.'Test.php'));
-                $this->info('Mojito test created successfully.');
+
                 if (Str::endsWith($this->name, 'Controller')) {
                     $this->call('make:controller', ['name' => $this->name, '--resource' => true, '--model' => str_replace('Controller', '', $this->name)]);
                     $this->files->push(base_path('routes/api.php'));
@@ -70,6 +65,12 @@ class Stubby extends Command
                 File::put(resource_path('views/'.Str::snake(Str::replaceLast('Controller', '', $this->name)).'.blade.php'), "@extends('layouts.app')\n@section('content')\n\n@endsection");
                 $this->files->push(resource_path('views/'.Str::snake(str_replace('Controller', '', $this->name)).'.blade.php'));
                 $this->info('Template created successfully.');
+                $stub = File::get(base_path('stubs/test.mojito.stub'));
+                $stub = str_replace('{{ namespace }}', 'Tests\\Unit', $stub);
+                $stub = str_replace('{{ class }}', 'Blade'.$this->name.'Test', $stub);
+                File::put(base_path('tests/Unit/Blade'.$this->name.'Test.php'), $stub);
+                $this->files->push(base_path('tests/Unit/Blade'.$this->name.'Test.php'));
+                $this->info('Mojito test created successfully.');
                 break;
             case 'livewire':
                 $this->call('make:livewire', ['name' => Str::slug($this->name)]);
