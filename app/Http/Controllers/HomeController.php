@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Response;
 
 class HomeController extends Controller
 {
@@ -11,7 +10,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function __invoke(): Response
+    public function __invoke()
     {
         return view('home');
     }
