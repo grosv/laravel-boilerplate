@@ -67,7 +67,7 @@ class NewProject extends Command
             $after[] = $v;
         }
 
-        $theme = str_replace($before, $after, File::get(__DIR__.'/theme.stub'));
+        $theme = str_replace($before, $after, File::get(__DIR__ . '/theme.stub'));
 
         File::put(base_path('config/theme.php'), $theme);
 
