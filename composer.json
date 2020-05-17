@@ -12,15 +12,17 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "fzaninotto/faker": "^1.9.1",
-        "grosv/eloquent-sheets": "^1.1",
-        "grosv/laravel-passwordless-login": "^1.1",
+        "grosv/eloquent-sheets": "^1.2",
+        "grosv/laravel-passwordless-login": "^1.2",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "laravel/vapor-cli": "^1.6",
         "livewire/livewire": "^1.0",
-        "spatie/laravel-cookie-consent": "^2.12"
+        "spatie/laravel-cookie-consent": "^2.12",
+        "grosv/stubby": "dev-master",
+        "grosv/laravel-git-workflow": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
