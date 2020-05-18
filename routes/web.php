@@ -1,15 +1,12 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TemporaryController;
-use App\Http\Controllers\WelcomeController;
+
+use App\Http\Controllers\Temporary;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/* TEMPORARY ROUTES - DELETE BEFORE GOING LIVE */
-Route::get('/tmp', [TemporaryController::class, 'render'])->name('tmp');
-/* END TEMPORARY ROUTES */
-Auth::routes();
-Route::get('/', [WelcomeController::class, 'render'])->name('welcome');
-Route::get('/home', [HomeController::class, 'render'])->name('home');
+/** @todo - Delete this entire group of routes before launch */
+Route::group(['prefix' => 'tmp'], function() {
+    Route::get('/panic', [Temporary::class, 'panic'])->name('panic-if-launched');
+});
 

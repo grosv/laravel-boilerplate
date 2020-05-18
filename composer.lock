@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c26c0435609cbeb00b6fdc0d263bf814",
+    "content-hash": "1918313ba053fe7d3b366f7be0d968e8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -922,7 +922,7 @@
         },
         {
             "name": "grosv/eloquent-sheets",
-            "version": "1.2.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grosv/eloquent-sheets.git",
@@ -970,16 +970,16 @@
         },
         {
             "name": "grosv/laravel-passwordless-login",
-            "version": "1.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grosv/laravel-passwordless-login.git",
-                "reference": "93a3e6320db211a0618c7547341f097d714b10fd"
+                "reference": "9b5c526cb58c9e101e0b607b1ba54dad4b03760a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grosv/laravel-passwordless-login/zipball/93a3e6320db211a0618c7547341f097d714b10fd",
-                "reference": "93a3e6320db211a0618c7547341f097d714b10fd",
+                "url": "https://api.github.com/repos/grosv/laravel-passwordless-login/zipball/9b5c526cb58c9e101e0b607b1ba54dad4b03760a",
+                "reference": "9b5c526cb58c9e101e0b607b1ba54dad4b03760a",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 }
             ],
             "description": "Passwordless login using temporary signed URL",
-            "time": "2020-04-23T19:38:16+00:00"
+            "time": "2020-04-23T19:41:49+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -5278,9 +5278,9 @@
         {
             "name": "grosv/stubby",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/grosv/stubby",
+            "dist": {
+                "type": "path",
+                "url": "../../../Packages/grosv/stubby",
                 "reference": "767737257c33019491471a102df4b0f329e89f4c"
             },
             "require": {
@@ -5317,8 +5317,7 @@
                     "email": "ed.grosvenor@wickedviral.com"
                 }
             ],
-            "description": "How I create new things in Laravel",
-            "time": "2020-05-14T21:56:55+00:00"
+            "description": "How I create new things in Laravel"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -7232,6 +7231,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "grosv/eloquent-sheets": 20,
+        "grosv/laravel-passwordless-login": 20,
         "grosv/stubby": 20
     },
     "prefer-stable": true,
@@ -7239,6 +7240,8 @@
     "platform": {
         "php": "^7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {
+        "ext-mysqli": "*"
+    },
     "plugin-api-version": "1.1.0"
 }
