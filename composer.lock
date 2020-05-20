@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c26c0435609cbeb00b6fdc0d263bf814",
+    "content-hash": "a93f3d78af0f9433d441ead8d15a65f3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -60,16 +60,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.138.2",
+            "version": "3.138.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "20397150ba28912a599838c44f50f6113cae5a2b"
+                "reference": "f09630f3e54364d8f7029ddcb2f4bbae272ba754"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/20397150ba28912a599838c44f50f6113cae5a2b",
-                "reference": "20397150ba28912a599838c44f50f6113cae5a2b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f09630f3e54364d8f7029ddcb2f4bbae272ba754",
+                "reference": "f09630f3e54364d8f7029ddcb2f4bbae272ba754",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-05-15T18:19:33+00:00"
+            "time": "2020-05-18T18:13:39+00:00"
         },
         {
             "name": "brick/math",
@@ -833,16 +833,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.135",
+            "version": "v0.136",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "d976baf8672d44123727593aae7762af597017be"
+                "reference": "e6fcc181136d28f6efa4b41f3434c97819b520e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/d976baf8672d44123727593aae7762af597017be",
-                "reference": "d976baf8672d44123727593aae7762af597017be",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/e6fcc181136d28f6efa4b41f3434c97819b520e6",
+                "reference": "e6fcc181136d28f6efa4b41f3434c97819b520e6",
                 "shasum": ""
             },
             "require": {
@@ -866,20 +866,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-05-14T00:25:00+00:00"
+            "time": "2020-05-16T00:25:19+00:00"
         },
         {
             "name": "google/auth",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "c7b295feb248f138f462a1e6b7d635e4244204c5"
+                "reference": "af4abf63988b8c74f589bee1e69ba310d3e43c6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/c7b295feb248f138f462a1e6b7d635e4244204c5",
-                "reference": "c7b295feb248f138f462a1e6b7d635e4244204c5",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/af4abf63988b8c74f589bee1e69ba310d3e43c6c",
+                "reference": "af4abf63988b8c74f589bee1e69ba310d3e43c6c",
                 "shasum": ""
             },
             "require": {
@@ -891,12 +891,12 @@
                 "psr/http-message": "^1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^1.11",
                 "guzzlehttp/promises": "0.1.1|^1.3",
                 "kelvinmo/simplejwt": "^0.2.5",
                 "phpseclib/phpseclib": "^2",
                 "phpunit/phpunit": "^4.8.36|^5.7",
-                "sebastian/comparator": ">=1.2.3"
+                "sebastian/comparator": ">=1.2.3",
+                "squizlabs/php_codesniffer": "^3.5"
             },
             "suggest": {
                 "phpseclib/phpseclib": "May be used in place of OpenSSL for signing strings or for token management. Please require version ^2."
@@ -918,11 +918,11 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2020-03-26T19:47:36+00:00"
+            "time": "2020-05-18T17:02:59+00:00"
         },
         {
             "name": "grosv/eloquent-sheets",
-            "version": "1.2.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grosv/eloquent-sheets.git",
@@ -970,16 +970,16 @@
         },
         {
             "name": "grosv/laravel-passwordless-login",
-            "version": "1.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/grosv/laravel-passwordless-login.git",
-                "reference": "93a3e6320db211a0618c7547341f097d714b10fd"
+                "reference": "9b5c526cb58c9e101e0b607b1ba54dad4b03760a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grosv/laravel-passwordless-login/zipball/93a3e6320db211a0618c7547341f097d714b10fd",
-                "reference": "93a3e6320db211a0618c7547341f097d714b10fd",
+                "url": "https://api.github.com/repos/grosv/laravel-passwordless-login/zipball/9b5c526cb58c9e101e0b607b1ba54dad4b03760a",
+                "reference": "9b5c526cb58c9e101e0b607b1ba54dad4b03760a",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 }
             ],
             "description": "Passwordless login using temporary signed URL",
-            "time": "2020-04-23T19:38:16+00:00"
+            "time": "2020-04-23T19:41:49+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1638,16 +1638,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.68",
+            "version": "1.0.69",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "3e4198372276ec99ac3409a21d7c9d1ced9026e4"
+                "reference": "7106f78428a344bc4f643c233a94e48795f10967"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3e4198372276ec99ac3409a21d7c9d1ced9026e4",
-                "reference": "3e4198372276ec99ac3409a21d7c9d1ced9026e4",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7106f78428a344bc4f643c233a94e48795f10967",
+                "reference": "7106f78428a344bc4f643c233a94e48795f10967",
                 "shasum": ""
             },
             "require": {
@@ -1724,7 +1724,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2020-05-12T20:33:44+00:00"
+            "time": "2020-05-18T15:13:39+00:00"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -2928,6 +2928,12 @@
                 "guid",
                 "identifier",
                 "uuid"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/ramsey",
+                    "type": "github"
+                }
             ],
             "time": "2020-03-29T20:13:32+00:00"
         },
@@ -4938,6 +4944,24 @@
                 "clean",
                 "php"
             ],
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/moelleken",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/voku",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/voku",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/voku/portable-ascii",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-03-13T01:23:26+00:00"
         }
     ],
@@ -5050,20 +5074,26 @@
                 "flare",
                 "reporting"
             ],
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/spatie",
+                    "type": "patreon"
+                }
+            ],
             "time": "2020-03-02T15:52:04+00:00"
         },
         {
             "name": "facade/ignition",
-            "version": "2.0.2",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "67f1677954ad33ca6b77f2c41cf43a58624f27fc"
+                "reference": "749fba7bf560fe2600ea55bf8734a7c9b8c30cfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/67f1677954ad33ca6b77f2c41cf43a58624f27fc",
-                "reference": "67f1677954ad33ca6b77f2c41cf43a58624f27fc",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/749fba7bf560fe2600ea55bf8734a7c9b8c30cfd",
+                "reference": "749fba7bf560fe2600ea55bf8734a7c9b8c30cfd",
                 "shasum": ""
             },
             "require": {
@@ -5072,7 +5102,7 @@
                 "facade/flare-client-php": "^1.0",
                 "facade/ignition-contracts": "^1.0",
                 "filp/whoops": "^2.4",
-                "illuminate/support": "^7.0",
+                "illuminate/support": "^7.0|^8.0",
                 "monolog/monolog": "^2.0",
                 "php": "^7.2.5",
                 "scrivo/highlight.php": "^9.15",
@@ -5121,7 +5151,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-03-18T19:20:44+00:00"
+            "time": "2020-05-18T15:20:13+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -5230,20 +5260,15 @@
         },
         {
             "name": "grosv/laravel-git-workflow",
-            "version": "1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/grosv/laravel-git-workflow.git",
-                "reference": "2e3f6d850197d3ace7fa285451bf8ee450596bf7"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/grosv/laravel-git-workflow/zipball/2e3f6d850197d3ace7fa285451bf8ee450596bf7",
-                "reference": "2e3f6d850197d3ace7fa285451bf8ee450596bf7",
-                "shasum": ""
+                "type": "path",
+                "url": "../../../Packages/grosv/laravel-git-workflow",
+                "reference": "0fb8b2d0ada664b43c4e3f23a6fe888b8d2c1eab"
             },
             "require": {
                 "ext-json": "*",
+                "ext-mysqli": "*",
                 "illuminate/support": "^7.0",
                 "php": "^7.4"
             },
@@ -5262,7 +5287,12 @@
                     "Grosv\\LaravelGitWorkflow\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/",
+                    "App\\": "vendor/orchestra/testbench-core/laravel/app"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -5272,15 +5302,14 @@
                     "email": "ed.grosvenor@wickedviral.com"
                 }
             ],
-            "description": "A repository template for Laravel packages",
-            "time": "2020-05-16T20:58:33+00:00"
+            "description": "A repository template for Laravel packages"
         },
         {
             "name": "grosv/stubby",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/grosv/stubby",
+            "dist": {
+                "type": "path",
+                "url": "../../../Packages/grosv/stubby",
                 "reference": "767737257c33019491471a102df4b0f329e89f4c"
             },
             "require": {
@@ -5317,8 +5346,7 @@
                     "email": "ed.grosvenor@wickedviral.com"
                 }
             ],
-            "description": "How I create new things in Laravel",
-            "time": "2020-05-14T21:56:55+00:00"
+            "description": "How I create new things in Laravel"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -6350,6 +6378,12 @@
                 "highlight.php",
                 "syntax"
             ],
+            "funding": [
+                {
+                    "url": "https://github.com/allejo",
+                    "type": "github"
+                }
+            ],
             "time": "2020-03-02T05:59:21+00:00"
         },
         {
@@ -7232,6 +7266,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "grosv/eloquent-sheets": 20,
+        "grosv/laravel-passwordless-login": 20,
+        "grosv/laravel-git-workflow": 20,
         "grosv/stubby": 20
     },
     "prefer-stable": true,
@@ -7239,6 +7276,8 @@
     "platform": {
         "php": "^7.4"
     },
-    "platform-dev": [],
+    "platform-dev": {
+        "ext-mysqli": "*"
+    },
     "plugin-api-version": "1.1.0"
 }
