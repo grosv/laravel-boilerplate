@@ -10,19 +10,22 @@
     "require": {
         "php": "^7.4",
         "fideloper/proxy": "^4.2",
+        "friendsofphp/php-cs-fixer": "^2.16",
         "fruitcake/laravel-cors": "^1.0",
         "fzaninotto/faker": "^1.9.1",
-        "grosv/eloquent-sheets": "dev-master",
-        "grosv/laravel-passwordless-login": "dev-master",
+        "grosv/eloquent-sheets": "1.2",
+        "grosv/laravel-passwordless-login": "^1.2",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "laravel/vapor-cli": "^1.6",
         "livewire/livewire": "^1.0",
-        "spatie/laravel-cookie-consent": "^2.12"
+        "spatie/laravel-cookie-consent": "^2.12",
+        "wikimedia/composer-merge-plugin": "^1.4"
     },
     "require-dev": {
+        "ext-mysqli": "*",
         "facade/ignition": "^2.0",
         "grosv/laravel-git-workflow": "dev-master",
         "grosv/stubby": "dev-master",
@@ -30,8 +33,8 @@
         "nunomaduro/collision": "^4.1",
         "nunomaduro/laravel-mojito": "^0.2.4",
         "phpunit/phpunit": "^8.5",
-        "timacdonald/log-fake": "^1.6",
-        "ext-mysqli": "*"
+        "stechstudio/laravel-php-cs-fixer": "^2.1",
+        "timacdonald/log-fake": "^1.6"
     },
     "config": {
         "optimize-autoloader": true,
@@ -57,27 +60,10 @@
             "Tests\\": "tests/"
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../../Packages/grosv/stubby"
-        },
-        {
-            "url": "../../../Packages/grosv/laravel-git-workflow",
-            "type": "path"
-        },
-        {
-            "url": "../../../Packages/grosv/eloquent-sheets",
-            "type": "path"
-        },
-        {
-            "url": "../../../Packages/grosv/laravel-passwordless-login",
-            "type": "path"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "lint": "php-cs-fixer fix -v",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

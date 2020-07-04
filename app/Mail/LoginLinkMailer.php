@@ -8,9 +8,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class LoginLinkMailer extends Mailable
+class LoginLinkMailer extends Mailable implements ShouldQueue
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public User $user;
 
@@ -18,7 +19,6 @@ class LoginLinkMailer extends Mailable
     {
         $this->user = $user;
     }
-
 
     public function build()
     {

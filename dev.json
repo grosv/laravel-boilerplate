@@ -1,0 +1,61 @@
+{
+    "require": {
+        "grosv/eloquent-sheets": "dev-main",
+        "grosv/laravel-passwordless-login": "dev-main",
+        "wikimedia/composer-merge-plugin": "^1.4"
+    },
+    "require-dev": {
+        "grosv/laravel-git-workflow": "dev-main",
+        "grosv/stubby": "dev-main"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "ignore-duplicates": true,
+            "merge-dev": true,
+            "merge-extra": false,
+            "merge-extra-deep": false,
+            "merge-scripts": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../Packages/grosv/*"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ]
+    }
+}

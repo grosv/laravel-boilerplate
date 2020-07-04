@@ -6,15 +6,12 @@ use Illuminate\Console\Command;
 
 class Gluten extends Command
 {
-
     protected $signature = 'gluten {total}';
-
 
     public function __construct()
     {
         parent::__construct();
     }
-
 
     public function handle(): int
     {
