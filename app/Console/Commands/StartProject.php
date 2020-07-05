@@ -19,33 +19,13 @@ class StartProject extends Command
      */
     protected $signature = 'project:start';
     /**
-     * @var Generator
-     */
-    private Generator $faker;
-    /**
-     * @var array
-     */
-    private array $colors;
-    /**
-     * @var array
-     */
-    private array $footers;
-    /**
-     * @var array
-     */
-    private array $layouts;
-    /**
      * @var \Illuminate\Support\Collection
      */
     private $deferred;
 
-    public function __construct(Generator $faker)
+    public function __construct()
     {
         parent::__construct();
-        $this->faker = $faker;
-        $this->colors = ['gray', 'red', 'orange', 'yellow', 'green', 'teal', 'blue', 'indigo', 'purple', 'pink'];
-        $this->footers = ['simple_social'];
-        $this->layouts = ['droopy'];
         $this->deferred = collect([]);
     }
 
